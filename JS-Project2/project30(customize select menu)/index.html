@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Select Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select Social Media</p>
+                <img src="image/arrow.png" id="arrow">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="image/facebook.png">
+                    <p>Facebook</p>
+                </li>
+                <li class="options">
+                    <img src="image/instagram.png">
+                    <p>Instagram</p>
+                </li>
+                <li class="options">
+                    <img src="image/pinterest.png">
+                    <p>Pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="image/twitter.png">
+                    <p>Twitter</p>
+                </li>
+                <li class="options">
+                    <img src="image/whatsapp.png">
+                    <p>WhatsApp</p>
+                </li>
+                <li class="options">
+                    <img src="image/youtube.png">
+                    <p>Youtube</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let selectField = document.getElementById("selectField");
+        let selectText = document.getElementById("selectText");
+        let list = document.getElementById("list");
+        let arrow = document.getElementById("arrow");
+
+        let options = document.getElementsByClassName("options");
+        
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+            arrow.classList.toggle("rotate");
+        }
+
+        for (option of options) {
+            option.onclick = function () {
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle("hide");
+                arrow.classList.toggle("rotate");
+            }
+        }
+    </script>
+</body>
+
+</html>
